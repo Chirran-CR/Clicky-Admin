@@ -92,7 +92,7 @@ const Dashboard = () => {
       });
     }
     setOrderData(data1);
-  }, [monthlyDataState]);
+  }, []);
 
   // const data = [
   //   {

@@ -5,6 +5,7 @@ import {
   AiOutlineShoppingCart,
   AiOutlineUser,
   AiOutlineBgColors,
+  AiOutlineLogout,
 } from "react-icons/ai";
 import { RiCouponLine } from "react-icons/ri";
 import { ToastContainer } from "react-toastify";
@@ -39,7 +40,10 @@ const MainLayout = () => {
           mode="inline"
           defaultSelectedKeys={[""]}
           onClick={({ key }) => {
-            if (key == "signout") {
+            if (key === "signout") {
+              localStorage.clear();
+              navigate("/");
+              // window.location.reload();
             } else {
               navigate(key);
             }
@@ -155,6 +159,11 @@ const MainLayout = () => {
               key: "enquiries",
               icon: <FaClipboardList className="fs-4" />,
               label: "Enquiries",
+            },
+            {
+              key: "signout",
+              icon: <AiOutlineLogout className="fs-4" />,
+              label: "Sign Out",
             },
           ]}
         />

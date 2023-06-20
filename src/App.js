@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={<OpenRoutes><Login /></OpenRoutes>} />
         <Route path="/reset-password" element={<PrivateRoutes><Resetpassword /></PrivateRoutes>} />
         <Route path="/forgot-password" element={<Forgotpassword />} />
-        <Route path="/admin" element={<MainLayout />}>
+        <Route path="/admin" element={<PrivateRoutes><MainLayout /></PrivateRoutes>}>
           <Route index element={<Dashboard />} />
           <Route path="enquiries" element={<Enquiries />} />
           <Route path="enquiries/:id" element={<ViewEnq />} />
